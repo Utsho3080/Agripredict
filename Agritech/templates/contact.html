@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - Contact Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/Agritech/css/contact.css">
+
+</head>
+<body class="min-h-screen">
+    <!-- Notification element -->
+    <div id="notification" class="notification"></div>
+
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50 bg-blur">
+        <div class="container mx-auto px-4 md:px-6 flex flex-wrap items-center justify-between">
+            <!-- Logo/Brand Name -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">AgriPredict</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8" id="nav-links">
+                <a href="/Agritech/index.html" class="nav-link text-gray-600 hover:text-blue-500">Home</a>
+                
+                <a href="about.html" class="nav-link text-gray-600 hover:text-blue-500">About</a>
+                <a href="contact.html" class="nav-link text-blue-500 active font-semibold">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-500">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-inner">
+            <div class="flex flex-col space-y-3">
+                <a href="index.html" class="py-2 text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="py-2 text-gray-600 hover:text-blue-500">About</a>
+                <a href="contact.html" class="py-2 text-blue-500">Contact</a>
+                <hr>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-500 to-green-500 py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
+            <p class="text-xl text-white opacity-90 max-w-3xl mx-auto">
+                Have questions or need assistance? We're here to help you with all your agricultural technology needs.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="contact-section container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="contact-card glass p-6 rounded-xl text-center">
+                <div class="contact-icon text-white text-2xl mb-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Our Location</h3>
+                <p class="text-gray-600">
+                   Kolkata<br>
+                   West Bengal<br>
+                    India
+                </p>
+            </div>
+            
+            <div class="contact-card glass p-6 rounded-xl text-center">
+                <div class="contact-icon text-white text-2xl mb-4">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Phone Number</h3>
+                <p class="text-gray-600">
+                    Customer Support:<br>
+                    <a href="tel:+918765432100" class="text-blue-500 hover:underline">+91 8765432100</a>
+                </p>
+                <p class="text-gray-600 mt-2">
+                    Technical Support:<br>
+                    <a href="tel:+918765432101" class="text-blue-500 hover:underline">+91 8765432101</a>
+                </p>
+            </div>
+            
+            <div class="contact-card glass p-6 rounded-xl text-center">
+                <div class="contact-icon text-white text-2xl mb-4">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Email Us</h3>
+                <p class="text-gray-600">
+                    General Inquiries:<br>
+                    <a href="mailto:info@agritech.in" class="text-blue-500 hover:underline">info@agritech.in</a>
+                </p>
+                <p class="text-gray-600 mt-2">
+                    Support Team:<br>
+                    <a href="mailto:support@agritech.in" class="text-blue-500 hover:underline">support@agritech.in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <!-- <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                        Send Us a <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Message</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Have questions, feedback, or need assistance? Fill out the form below and our team will get back to you as soon as possible.
+                    </p>
+                </div>
+                
+                <div class="glowing-border">
+                    <div class="glass p-8 rounded-xl">
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                    <input type="text" id="name" name="name" class="input-field w-full px-4 py-3 outline-none" placeholder="Enter your full name" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" name="email" class="input-field w-full px-4 py-3 outline-none" placeholder="Enter your email address" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="input-field w-full px-4 py-3 outline-none" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" class="input-field w-full px-4 py-3 outline-none" placeholder="What is this regarding?" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="6" class="input-field w-full px-4 py-3 outline-none resize-none" placeholder="Please provide details about your inquiry..." required></textarea>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="terms" name="terms" type="checkbox" required class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="terms" class="font-medium text-gray-700">I agree to the <a href="#" class="text-blue-500 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a></label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full py-3 text-white gradient-btn rounded-lg text-lg font-medium">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Map Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Location</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Visit our headquarters at the Indian Agricultural Research Institute campus in Kolkata.
+            </p>
+        </div>
+        
+        <div class="map-container">
+            <!-- Placeholder for map -->
+            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.0784057117103!2d88.42445437507787!3d22.576170679489202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02751a9d9c9e85%3A0x7fe665c781b10383!2sTechno%20Main%20Salt%20Lake!5e0!3m2!1sen!2sin!4v1749661335982!5m2!1sen!2sin" 
+       width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <!-- <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    Frequently Asked <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Questions</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Find quick answers to common questions about our services.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex justify-between cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-gray-800">How accurate are your crop recommendations?</h3>
+                        <span class="text-blue-500 text-xl transition-transform transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">
+                            Our crop recommendations are based on advanced machine learning algorithms with an accuracy rate of 98%. We analyze multiple parameters including soil composition, climate data, and historical performance to provide the most suitable crop options for your specific conditions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex justify-between cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-gray-800">How do I get my soil tested for the prediction system?</h3>
+                        <span class="text-blue-500 text-xl transition-transform transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">
+                            You can get your soil tested through our partner laboratories across India. Simply register on our platform, and we'll connect you with the nearest testing facility. Alternatively, if you already have soil test results, you can directly input those values into our prediction system.
+                        </p>
+                    </div>
+
+
+
+ -->
+
+
+
+                    <!-- Continue with additional FAQ items -->
+                <!-- <div class="glass p-6 rounded-xl">
+                    <div class="flex justify-between cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-gray-800">Do you offer consultations for farm-specific issues?</h3>
+                        <span class="text-blue-500 text-xl transition-transform transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">
+                            Yes, we offer personalized consultations for farm-specific issues. Our team of agricultural experts can provide guidance on pest management, irrigation systems, sustainable farming practices, and more. You can book a consultation through our platform or contact our support team directly.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex justify-between cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-gray-800">What regions do your services cover?</h3>
+                        <span class="text-blue-500 text-xl transition-transform transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">
+                            Our services currently cover all major agricultural regions across India. We have specific data models for different climatic zones and soil types found throughout the country. We're continually expanding our database to include more regionalized recommendations and insights.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex justify-between cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-gray-800">How do I access the mobile app features?</h3>
+                        <span class="text-blue-500 text-xl transition-transform transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">
+                            Our mobile application is available for both Android and iOS devices. You can download it from the Google Play Store or Apple App Store by searching for "AgriTech India." The mobile app provides all the features of our web platform plus additional capabilities like offline access and camera-based plant disease identification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Social Media Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Connect With <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Us</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Follow us on social media for the latest updates, farming tips, and community stories.
+            </p>
+        </div>
+        
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="social-icon bg-blue-600 text-white text-2xl">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon bg-blue-400 text-white text-2xl">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon bg-pink-600 text-white text-2xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon bg-blue-700 text-white text-2xl">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-icon bg-red-600 text-white text-2xl">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon bg-green-500 text-white text-2xl">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Subscribe Section -->
+    <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    Stay <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Updated</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Subscribe to our newsletter to receive the latest agricultural insights, technology updates, and special offers.
+                </p>
+                
+                <div class="glass p-8 rounded-xl">
+                    <form id="subscribeForm" class="flex flex-col md:flex-row gap-4">
+                        <input type="email" id="subscribe-email" class="input-field flex-grow px-4 py-3 outline-none rounded-lg" placeholder="Enter your email address" required>
+                        <button type="submit" class="py-3 px-6 text-white gradient-btn rounded-lg text-lg font-medium whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+      <footer class="footer">
+        <!-- Futuristic UI Elements -->
+        <div class="tech-border"></div>
+        <div class="circuit-lines"></div>
+        <div class="digital-mesh"></div>
+        
+        <!-- Tech Accent Elements -->
+        <div class="tech-circles tech-circles-1"></div>
+        <div class="tech-circles tech-circles-2"></div>
+        <div class="tech-dot tech-dot-1"></div>
+        <div class="tech-dot tech-dot-2"></div>
+        <div class="tech-dot tech-dot-3"></div>
+        <div class="data-element data-element-1"></div>
+        <div class="data-element data-element-2"></div>
+        
+        <!-- Digital Background Pattern -->
+        <div class="digit-graphic">
+            01001000 01000001 01010010 01010110 01000101 01010011 01010100 00100000 01000001 01001001 00100000 01010011 01001111 01001001 01001100 00100000 01000100 01000001 01010100 01000001
+        </div>
+        
+        <!-- Main Footer Content -->
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo / About -->
+                <div>
+                    <div class="footer-logo">
+                        <span class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z" stroke="#00d2ff" stroke-width="1.5" fill="rgba(0,210,255,0.1)"></path>
+                                <path d="M12 22V12M12 12V2M12 12L20 6M12 12L4 6" stroke="#00d2ff" stroke-width="1.5"></path>
+                                <circle cx="12" cy="12" r="3" fill="#00d2ff"></circle>
+                            </svg>
+                        </span>
+                        Crop & Soil AI
+                    </div>
+                    <p class="footer-about">
+                        Revolutionizing agriculture with AI-driven crop recommendations and intelligent soil analysis. Join us in shaping the future of farming.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="footer-heading">Explore</h3>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="predict.html#fertilizer-service">Soil Analyzer</a></li>
+                        <li><a href="predict.html#crop-service">Crop Suggestions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:support@cropsoil.ai">support@cropsoil.ai</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone:</span>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location:</span>
+                        <span>Kolkata, India</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Line -->
+            <div class="footer-bottom">
+                © 2025 Crop & Soil AI — Advancing agriculture with intelligent analysis
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Check authentication status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuth();
+        });
+        
+        // Check if user is logged in
+        function checkAuth() {
+            const user = localStorage.getItem('agritech_user');
+            
+            if (user) {
+                const userData = JSON.parse(user);
+                
+                // Show user profile and hide auth buttons
+                document.getElementById('auth-buttons').classList.add('hidden');
+                document.getElementById('user-profile').classList.remove('hidden');
+                document.getElementById('username-display').textContent = userData.name;
+                
+                // Mobile view
+                document.getElementById('mobile-auth-buttons').classList.add('hidden');
+                document.getElementById('mobile-user-profile').classList.remove('hidden');
+                document.getElementById('mobile-username-display').textContent = userData.name;
+            } else {
+                // Show auth buttons and hide user profile
+                document.getElementById('auth-buttons').classList.remove('hidden');
+                document.getElementById('user-profile').classList.add('hidden');
+                
+                // Mobile view
+                document.getElementById('mobile-auth-buttons').classList.remove('hidden');
+                document.getElementById('mobile-user-profile').classList.add('hidden');
+            }
+        }
+        
+        // Logout function
+        function logout() {
+            localStorage.removeItem('agritech_user');
+            checkAuth();
+            showNotification('You have been logged out successfully.', 'success');
+        }
+        
+        // Toggle FAQ answers
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+        
+        // Show notification
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = 'notification ' + type;
+            notification.classList.add('show');
+            
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Normally we would send the form data to a server here
+            // For demo purposes, we'll just show a success message
+            showNotification('Your message has been sent successfully! We will contact you soon.', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Newsletter subscription
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Normally we would send the subscription to a server here
+            // For demo purposes, we'll just show a success message
+            showNotification('Thank you for subscribing to our newsletter!', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

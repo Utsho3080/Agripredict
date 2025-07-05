@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech - About Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/Agritech/css/about.css">
+
+</head>
+<body class="min-h-screen">
+    <!-- Notification element -->
+    <div id="notification" class="notification"></div>
+
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50 bg-blur">
+        <div class="container mx-auto px-4 md:px-6 flex flex-wrap items-center justify-between">
+            <!-- Logo/Brand Name -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">AgriPredict</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8" id="nav-links">
+                <a href="/Agritech/index.html" class="nav-link text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="nav-link text-blue-500 active font-semibold">About</a>
+                <a href="contact.html" class="nav-link text-gray-600 hover:text-blue-500">Contact</a>
+            </div>
+
+            
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-500">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-inner">
+            <div class="flex flex-col space-y-3">
+                <a href="/Agritech/index.html" class="py-2 text-gray-600 hover:text-blue-500">Home</a>
+                <a href="about.html" class="py-2 text-blue-500">About</a>
+                <a href="contact.html" class="py-2 text-gray-600 hover:text-blue-500">Contact</a>
+                <hr>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-500 to-green-500 py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">About AgriTech</h1>
+            <p class="text-xl text-white opacity-90 max-w-3xl mx-auto">
+                We're revolutionizing agriculture by combining cutting-edge AI technology with deep agricultural expertise to help farmers make data-driven decisions.
+            </p>
+        </div>
+    </div>
+
+    <!-- Our Story Section -->
+    <div class="about-section container mx-auto px-4 py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Story</span>
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    Launched in early 2025, AgriTech is a major project developed by three dedicated students from Techno Main Salt Lake - Somodip Das, Utsho Saha, and Triasha Das, with a shared vision of transforming farming practices through technology.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    What began as an ambitious academic project has evolved into a comprehensive platform designed to serve farmers across the country. Our team recognized that precise crop selection based on soil composition could significantly improve yields while reducing resource waste.
+                </p>
+                <p class="text-lg text-gray-600">
+                    Over the past 4 months, we have worked intensively to develop prediction algorithms and create a user-friendly platform that bridges the gap between advanced agricultural science and practical farming solutions.
+                </p>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="glowing-border">
+                    <div class="glass p-6 rounded-xl">
+                        <!-- <img src="/api/placeholder/600/400" alt="AgriTech Development Team" class="w-full rounded-lg shadow-md"> -->
+                        <div class="mt-6 space-y-4">
+                            <div class="milestone-card bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center gap-3">
+                                    <div class="text-blue-500 text-xl">
+                                        <i class="fas fa-flag-checkered"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">January 2025</h3>
+                                        <p class="text-sm text-gray-500">Project initiated at Techno Main Salt Lake</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="milestone-card bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center gap-3">
+                                    <div class="text-green-500 text-xl">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">March 2025</h3>
+                                        <p class="text-sm text-gray-500">Core algorithms and UI development completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="milestone-card bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex items-center gap-3">
+                                    <div class="text-purple-500 text-xl">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">May 2025</h3>
+                                        <p class="text-sm text-gray-500">Platform ready for deployment and testing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Mission Section -->
+    <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Mission</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We're on a mission to make sustainable farming accessible to all through data-driven intelligence.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="value-card glass p-6 rounded-xl text-center relative">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sustainable Agriculture</h3>
+                    <p class="text-gray-600">Promoting farming practices that enhance environmental health and economic profitability while preserving natural resources.</p>
+                </div>
+                <div class="value-card glass p-6 rounded-xl text-center relative">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovation & Research</h3>
+                    <p class="text-gray-600">Continuously improving our algorithms and methodologies through rigorous research and real-world testing.</p>
+                </div>
+                <div class="value-card glass p-6 rounded-xl text-center relative">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Farmer Empowerment</h3>
+                    <p class="text-gray-600">Providing accessible tools and knowledge that enable farmers to make confident, data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="about-section container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Impact</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                AgriTech is making a tangible difference in agricultural productivity and sustainability.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="stat-card glass p-6 rounded-xl text-center">
+                <div class="text-5xl stat-number mb-2">100+</div>
+                <p class="text-lg text-gray-600">Farmers Assisted</p>
+            </div>
+            <div class="stat-card glass p-6 rounded-xl text-center">
+                <div class="text-5xl stat-number mb-2">30%</div>
+                <p class="text-lg text-gray-600">Average Yield Increase</p>
+            </div>
+            <div class="stat-card glass p-6 rounded-xl text-center">
+                <div class="text-5xl stat-number mb-2">90% +</div>
+                <p class="text-lg text-gray-600">Prediction Accuracy</p>
+            </div>
+            <div class="stat-card glass p-6 rounded-xl text-center">
+                <div class="text-5xl stat-number mb-2">India</div>
+                <p class="text-lg text-gray-600">Country</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Meet Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Team</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                We're a dedicated team of MCA students from Techno Main Salt Lake, combining our technical expertise and passion for agriculture to create innovative solutions.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            
+            <div class="team-member glass p-6 rounded-xl text-center">
+                <img src="/photos/Utsho.JPG" alt="Utsho Saha" class="w-full h-64 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Utsho Saha</h3>
+                <p class="text-blue-500 mb-2">MCA Student</p>
+                <p class="text-gray-600 mb-3">Techno Main Salt Lake</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-blue-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-member glass p-6 rounded-xl text-center">
+                <img src="/photos/somodip.jpg" alt="Somodip Das" class="w-full h-64 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Somodip Das</h3>
+                <p class="text-blue-500 mb-2">MCA Student</p>
+                <p class="text-gray-600 mb-3">Techno Main Salt Lake</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-blue-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-member glass p-6 rounded-xl text-center">
+                <img src="/photos/triasha.jpg" alt="Triasha Das" class="w-full h-64 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Triasha Das</h3>
+                <p class="text-blue-500 mb-2">MCA Student</p>
+                <p class="text-gray-600 mb-3">Techno Main Salt Lake</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-blue-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- Partners Section -->
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Our <span class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Partners</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                We collaborate with educational institutions, government initiatives, and open-source communities to build innovative agricultural solutions.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            
+            <!-- Techno India Group -->
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="text-center">
+                    <div class="text-3xl text-blue-600 mb-2">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-700">Techno India</h3>
+                    <p class="text-xs text-gray-500">Salt Lake</p>
+                </div>
+            </div>
+
+            <!-- Government of India - Digital India -->
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="text-center">
+                    <div class="text-3xl text-orange-500 mb-2">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-700">Digital India</h3>
+                    <p class="text-xs text-gray-500">Initiative</p>
+                </div>
+            </div>
+
+            <!-- ICAR (Indian Council of Agricultural Research) -->
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="text-center">
+                    <div class="text-3xl text-green-600 mb-2">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-700">ICAR</h3>
+                    <p class="text-xs text-gray-500">Research Support</p>
+                </div>
+            </div>
+
+            <!-- GitHub (Open Source) -->
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="text-center">
+                    <div class="text-3xl text-gray-800 mb-2">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-700">GitHub</h3>
+                    <p class="text-xs text-gray-500">Open Source</p>
+                </div>
+            </div>
+
+            <!-- Krishi Vigyan Kendra -->
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="text-center">
+                    <div class="text-3xl text-yellow-600 mb-2">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-700">KVK</h3>
+                    <p class="text-xs text-gray-500">West Bengal</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Support Acknowledgment -->
+        <div class="mt-12 text-center">
+            <p class="text-sm text-gray-500">
+                Special thanks to our mentors, faculty advisors, and the farming community for their valuable guidance and support.
+            </p>
+        </div>
+    </div>
+</div>
+    <!-- Call to Action -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="glass p-8 rounded-xl text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Transform Your Farming Practices?</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join thousands of farmers across India who are using AgriTech to optimize crop selection and improve yields.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="window.location.href='predict.html'" class="px-8 py-3 text-lg font-medium text-white gradient-btn rounded-lg">
+                    Get Started For Free
+                </button>
+                <button onclick="window.location.href='contact.html'" class="px-8 py-3 text-lg font-medium text-blue-500 border-2 border-blue-500 rounded-lg hover:bg-blue-50 transition">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+      <footer class="footer">
+        <!-- Futuristic UI Elements -->
+        <div class="tech-border"></div>
+        <div class="circuit-lines"></div>
+        <div class="digital-mesh"></div>
+        
+        <!-- Tech Accent Elements -->
+        <div class="tech-circles tech-circles-1"></div>
+        <div class="tech-circles tech-circles-2"></div>
+        <div class="tech-dot tech-dot-1"></div>
+        <div class="tech-dot tech-dot-2"></div>
+        <div class="tech-dot tech-dot-3"></div>
+        <div class="data-element data-element-1"></div>
+        <div class="data-element data-element-2"></div>
+        
+        <!-- Digital Background Pattern -->
+        <div class="digit-graphic">
+            01001000 01000001 01010010 01010110 01000101 01010011 01010100 00100000 01000001 01001001 00100000 01010011 01001111 01001001 01001100 00100000 01000100 01000001 01010100 01000001
+        </div>
+        
+        <!-- Main Footer Content -->
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo / About -->
+                <div>
+                    <div class="footer-logo">
+                        <span class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z" stroke="#00d2ff" stroke-width="1.5" fill="rgba(0,210,255,0.1)"></path>
+                                <path d="M12 22V12M12 12V2M12 12L20 6M12 12L4 6" stroke="#00d2ff" stroke-width="1.5"></path>
+                                <circle cx="12" cy="12" r="3" fill="#00d2ff"></circle>
+                            </svg>
+                        </span>
+                        Crop & Soil AI
+                    </div>
+                    <p class="footer-about">
+                        Revolutionizing agriculture with AI-driven crop recommendations and intelligent soil analysis. Join us in shaping the future of farming.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="footer-heading">Explore</h3>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="predict.html#fertilizer-service">Soil Analyzer</a></li>
+                        <li><a href="predict.html#crop-service">Crop Suggestions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:support@cropsoil.ai">support@cropsoil.ai</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone:</span>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location:</span>
+                        <span>Kolkata, India</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Line -->
+            <div class="footer-bottom">
+                © 2025 Crop & Soil AI — Advancing agriculture with intelligent analysis
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Check user authentication status
+        function checkAuthStatus() {
+            const token = localStorage.getItem('authToken');
+            const username = localStorage.getItem('username');
+            
+            if (token && username) {
+                // User is logged in
+                document.getElementById('auth-buttons').classList.add('hidden');
+                document.getElementById('user-profile').classList.remove('hidden');
+                document.getElementById('user-profile').classList.add('flex');
+                document.getElementById('username-display').textContent = username;
+                
+                document.getElementById('mobile-auth-buttons').classList.add('hidden');
+                document.getElementById('mobile-user-profile').classList.remove('hidden');
+                document.getElementById('mobile-user-profile').classList.add('flex');
+                document.getElementById('mobile-username-display').textContent = username;
+            } else {
+                // User is not logged in
+                document.getElementById('auth-buttons').classList.remove('hidden');
+                document.getElementById('user-profile').classList.add('hidden');
+                document.getElementById('user-profile').classList.remove('flex');
+                
+                document.getElementById('mobile-auth-buttons').classList.remove('hidden');
+                document.getElementById('mobile-user-profile').classList.add('hidden');
+                document.getElementById('mobile-user-profile').classList.remove('flex');
+            }
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('username');
+            showNotification('Logged out successfully', 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        }
+
+        // Show notification
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Call on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthStatus();
+        });
+    </script>
+</body></html>
