@@ -46,7 +46,7 @@ except Exception as e:
     print(f"✗ Error loading soil model: {e}")
     soil_model = None
 
-soil_classes = ['Sandy', 'Loamy', 'Black', 'Red', 'Clayey']
+soil_classes = ['Loamy', 'Alluvial', 'Sandy_Loam' , 'Sandy', 'Cinde' , 'Black' , 'Clay' ]
 
 @app.route('/')
 def home():
@@ -55,21 +55,19 @@ def home():
 @app.route('/predict_crop', methods=['POST', 'OPTIONS'])
 def predict_crop():
     if request.method == 'OPTIONS':
-        # Handle preflight request
         response = jsonify({'status': 'ok'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
         response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
         return response
-    
+
     try:
         if crop_model is None:
             return jsonify({'error': 'Crop model not available'}), 500
-            
+
         data = request.get_json(force=True)
         print("Crop prediction input received:", data)
 
-        # Validate input data
         required_fields = ['nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity', 'ph', 'rainfall']
         for field in required_fields:
             if field not in data:
@@ -78,14 +76,15 @@ def predict_crop():
         input_data = np.array([[data['nitrogen'], data['phosphorus'], data['potassium'],
                                 data['temperature'], data['humidity'], data['ph'],
                                 data['rainfall']]])
-        
+
         prediction = crop_model.predict(input_data)[0]
         print(f"Crop prediction result: {prediction}")
-        
-        response = jsonify({'prediction': prediction})
+
+        # Fix: convert to native Python type
+        response = jsonify({'prediction': str(prediction)})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-        
+
     except Exception as e:
         print(f"Error in crop prediction: {e}")
         response = jsonify({'error': str(e)})
@@ -95,102 +94,86 @@ def predict_crop():
 @app.route('/predict_fertilizer', methods=['POST', 'OPTIONS'])
 def predict_fertilizer():
     if request.method == 'OPTIONS':
-        # Handle preflight request
         response = jsonify({'status': 'ok'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
         response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
         return response
-    
+
     try:
         if fertilizer_model is None:
             return jsonify({'error': 'Fertilizer model not available'}), 500
-            
+
         data = request.get_json(force=True)
         print("Fertilizer prediction input received:", data)
 
-        # Validate input data
-        required_fields = ['nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity']
+        required_fields = ['nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity','ph','rainfall','soil_type','crop_type']
         for field in required_fields:
             if field not in data:
                 return jsonify({'error': f'Missing field: {field}'}), 400
 
         input_data = np.array([[data['nitrogen'], data['phosphorus'], data['potassium'],
-                                data['temperature'], data['humidity']]])
-        
+                                data['temperature'], data['humidity'],data['ph'],data['rainfall'],data['soil_type'],data['crop_type']]])
+
         prediction = fertilizer_model.predict(input_data)[0]
         print(f"Fertilizer prediction result: {prediction}")
-        
-        response = jsonify({'prediction': prediction})
+
+        # Fix: convert to native Python type
+        response = jsonify({'prediction': str(prediction)})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-        
+
     except Exception as e:
         print(f"Error in fertilizer prediction: {e}")
         response = jsonify({'error': str(e)})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response, 500
 
-@app.route('/predict_soil', methods=['POST', 'OPTIONS'])
+@app.route('/predict_soil', methods=['POST'])
 def predict_soil():
-    if request.method == 'OPTIONS':
-        # Handle preflight request
-        response = jsonify({'status': 'ok'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-        return response
-    
     try:
         if soil_model is None:
             return jsonify({'error': 'Soil model not available'}), 500
-            
+
         if 'soilImage' not in request.files:
             return jsonify({'error': 'No file uploaded'}), 400
 
         file = request.files['soilImage']
         if file.filename == '':
             return jsonify({'error': 'No file selected'}), 400
-            
+
+        # Save file before processing
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        print(f"Soil image saved: {filepath}")
+        print(f"Saved soil image to: {filepath}")
 
-        image = load_img(filepath, target_size=(224, 224))
+        # Try loading the image
+        try:
+            image = load_img(filepath, target_size=(224, 224))
+        except Exception as load_error:
+            print("Error loading image:", load_error)
+            return jsonify({'error': f'Invalid image file: {load_error}'}), 400
+
         image = img_to_array(image) / 255.0
         image = np.expand_dims(image, axis=0)
 
         prediction = soil_model.predict(image)
         predicted_class = soil_classes[np.argmax(prediction)]
-        print(f"Soil prediction result: {predicted_class}")
+        print(f"Prediction: {predicted_class}")
 
-        # Clean up uploaded file
-        try:
-            os.remove(filepath)
-        except:
-            pass
+        os.remove(filepath)
 
         response = jsonify({'prediction': predicted_class})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-        
+
     except Exception as e:
-        print(f"Error in soil prediction: {e}")
+        print("General error:", e)
         response = jsonify({'error': str(e)})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response, 500
 
-@app.route('/health', methods=['GET'])
-def health_check():
-    """Health check endpoint"""
-    status = {
-        'status': 'healthy',
-        'crop_model': crop_model is not None,
-        'fertilizer_model': fertilizer_model is not None,
-        'soil_model': soil_model is not None
-    }
-    return jsonify(status)
 
 if __name__ == '__main__':
     print("🌱 Starting AgriTech Flask Server...")
@@ -205,5 +188,5 @@ if __name__ == '__main__':
     print("   - POST /predict_fertilizer") 
     print("   - POST /predict_soil")
     print("   - GET /health")
-    
+
     app.run(debug=True, host='127.0.0.1', port=5000)
