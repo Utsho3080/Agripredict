@@ -27,7 +27,21 @@
             <a href="/Agritech/templates/about.html" class="nav-link text-gray-600 hover:text-blue-500" onclick="showPage('about')">About</a>
             <a href="/Agritech/templates/contact.html" class="nav-link text-gray-600 hover:text-blue-500" onclick="showPage('contact')">Contact</a>
         </div>
-
+        <!-- Desktop Auth Buttons (UPDATED) -->
+        <div class="hidden md:flex items-center space-x-4" id="auth-buttons">
+            <button onclick="window.location.href='login.html'" class="px-4 py-2 text-blue-500 border border-blue-500 rounded-lg hover:bg-blue-50 transition">Login</button>
+            <button onclick="window.location.href='register.html'" class="px-4 py-2 text-white gradient-btn rounded-lg">Register</button>
+        </div>
+        <!-- User Profile (desktop) -->
+        <div class="hidden items-center space-x-4" id="user-profile">
+            <div class="flex items-center space-x-2">
+                <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    <i class="fas fa-user"></i>
+                </span>
+                <span class="font-medium text-gray-700" id="username-display"></span>
+            </div>
+            <button onclick="logout()" class="px-4 py-2 text-red-500 border border-red-500 rounded-lg hover:bg-red-50 transition">Logout</button>
+        </div>
 
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-500">
@@ -43,7 +57,20 @@
             <a href="about.html" class="py-2 text-gray-600 hover:text-blue-500" onclick="showPage('about')">About</a>
             <a href="contact.html" class="py-2 text-gray-600 hover:text-blue-500" onclick="showPage('contact')">Contact</a>
             <hr>
-            
+            <!-- Mobile Auth Buttons (UPDATED) -->
+            <div class="flex flex-col space-y-2" id="mobile-auth-buttons">
+                <button onclick="window.location.href='register.html#login'" class="py-2 text-blue-500 border border-blue-500 rounded-lg hover:bg-blue-50 transition">Login</button>
+                <button onclick="window.location.href='register.html#register'" class="py-2 text-white gradient-btn rounded-lg">Register</button>
+            </div>
+            <div class="hidden flex-col space-y-2" id="mobile-user-profile">
+                <div class="flex items-center space-x-2">
+                    <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="font-medium text-gray-700" id="mobile-username-display"></span>
+                </div>
+                <button onclick="logout()" class="py-2 text-red-500 border border-red-500 rounded-lg hover:bg-red-50 transition">Logout</button>
+            </div>
         </div>
     </div>
   </nav>

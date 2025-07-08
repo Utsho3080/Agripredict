@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriTech - Authentication</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="login.css" />
+    <script src="login.js"></script>
+</head>
+
+<body class="min-h-screen">
+
+
+<nav class="bg-white shadow-md py-4 sticky top-0 z-50 bg-blur">
+    <div class="container mx-auto px-44 md:px-6 flex flex-wrap items-center justify-between">
+        <a href="#" class="flex items-center space-x-2" onclick="showPage('home')">
+            <span class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">AgriTech</span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8" id="nav-links">
+            <a href="index.html" class="nav-link text-gray-600 hover:text-blue-500" onclick="showPage('home')">Home</a>
+            <a href="predict.html" class="nav-link text-gray-600 hover:text-blue-500" onclick="checkAuthAndRedirect('prediction')">Predict</a>
+            <a href="#" class="nav-link text-gray-600 hover:text-blue-500" onclick="showPage('about')">About</a>
+            <a href="#" class="nav-link text-gray-600 hover:text-blue-500" onclick="showPage('contact')">Contact</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-blue-500">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-inner">
+        <div class="flex flex-col space-y-3">
+            <a href="#" class="py-2 text-gray-600 hover:text-blue-500" onclick="showPage('home')">Home</a>
+            <a href="#" class="py-2 text-gray-600 hover:text-blue-500" onclick="checkAuthAndRedirect('prediction')">Predict</a>
+            <a href="#" class="py-2 text-gray-600 hover:text-blue-500" onclick="showPage('about')">About</a>
+            <a href="#" class="py-2 text-gray-600 hover:text-blue-500" onclick="showPage('contact')">Contact</a>
+            <hr>
+        </div>
+    </div>
+</nav>
+
+    <div class="glass-container">
+        <section id="login">
+            <h2 class="text-2xl font-bold text-center mb-6">Welcome Back</h2>
+            <form id="login-form">
+                <div class="mb-4">
+                    <label for="login-email" class="block mb-2">Email Address</label>
+                    <input type="email" id="login-email" class="input-field" placeholder="Enter your email">
+                    <div class="form-error hidden" id="login-email-error"></div>
+                </div>
+                <div class="mb-4">
+                    <label for="login-password" class="block mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="login-password" class="input-field" placeholder="Enter your password">
+                        <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600" onclick="togglePasswordVisibility('login-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-error hidden" id="login-password-error"></div>
+                    <div class="text-right mt-2">
+                        <a href="#" class="text-sm">Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="gradient-btn w-full mt-4">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <p class="text-center text-sm mt-4">
+                Don't have an account?
+                <a href="register.html" onclick="showSection('register')">Register here</a>
+            </p>
+        </section>
+
+        <section id="otp-verification-section">
+            <h2 class="text-2xl font-bold text-center mb-6">OTP Verification</h2>
+            <p class="text-center mb-4 text-sm">Please enter the 6-digit OTP sent to your email</p>
+            <form id="otp-form" class="flex justify-center mb-4">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-1">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-2">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-3">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-4">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-5">
+                <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-6">
+            </form>
+            <div class="form-error text-center hidden" id="otp-error"></div>
+            <div class="text-center mt-4">
+                <button onclick="verifyOTP()" class="gradient-btn mx-auto">
+                    <i class="fas fa-check-circle"></i> Verify OTP
+                </button>
+                <p class="text-sm mt-2">
+                    Didn't receive OTP? <a href="#" onclick="resendOTP()">Resend</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="dashboard-section">
+            <h2 class="text-2xl font-bold text-center mb-6">Welcome to AgriTech</h2>
+            <div class="text-center">
+                <p id="user-welcome" class="mb-4"></p>
+                <button onclick="logout()" class="gradient-btn mx-auto">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

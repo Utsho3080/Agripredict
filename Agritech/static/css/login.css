@@ -1,0 +1,188 @@
+:root {
+    --primary: #38bdf8;
+    --secondary: #4ade80;
+    --accent: #a78bfa;
+    --dark: #0f172a;
+    --light: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: flex-start; /* Push nav to the top */
+    align-items: center; /* Center items horizontally */
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+nav {
+    position: sticky; /* Or fixed if you prefer */
+    top: auto;
+    z-index: 0;
+    width: 110%; /* Make it full width */
+    background-color: white; /* Or your desired background */
+    
+
+}
+
+
+.glass-container {
+    background: rgba(154, 216, 243, 0.4);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(6, 6, 6, 0.3);
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem; /* Add space between nav and form */
+}
+
+.input-field {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    color: #f0f9ff;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.input-field::placeholder {
+    color: rgba(5, 5, 5, 0.6);
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 0 0 2px rgba(56, 189, 248, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.gradient-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.gradient-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 12px rgba(56, 189, 248, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-error {
+    color: #ff0303;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.input-error {
+    border: 2px solid #fca5a5 !important;
+    background: rgba(252, 165, 165, 0.1) !important;
+}
+
+h2, label {
+    color: #000000;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-gray-600 {
+    color: rgba(75, 85, 99, 1); /* Tailwind's gray-600 in rgba */
+}
+
+a {
+    color: #00b3ff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2100f5;
+}
+
+/* Hide sections by default */
+#otp-verification-section,
+#dashboard-section {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .glass-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* OTP Input Styles */
+.otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 0 5px;
+}
+.nav-link {
+    position: relative; /* Changed from auto to relative for the underline effect */
+    transition: all 0.3s ease;
+    color: #4b5563; /* Tailwind's gray-600 */
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+

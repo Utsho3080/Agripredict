@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriTech - Authentication</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="login.css" />
+  <script src="login.js"></script>
+
+ 
+</head>
+
+<body>
+  <!-- Main Container -->
+  <div class="glass-container">
+    
+    <!-- Registration Section -->
+    <section id="register">
+      <h2 class="text-2xl font-bold text-center mb-6">Create Your Account</h2>
+      <form id="register-form">
+        <div class="mb-4">
+          <label for="register-fullname" class="block mb-2">Full Name</label>
+          <input type="text" id="register-fullname" class="input-field" placeholder="Enter your full name">
+          <div class="form-error hidden" id="register-fullname-error"></div>
+        </div>
+        <div class="mb-4">
+          <label for="register-email" class="block mb-2">Email Address</label>
+          <input type="email" id="register-email" class="input-field" placeholder="Enter your email">
+          <div class="form-error hidden" id="register-email-error"></div>
+        </div>
+        <div class="mb-4">
+          <label for="register-password" class="block mb-2">Password</label>
+          <div class="relative">
+            <input type="password" id="register-password" class="input-field" placeholder="Create a strong password">
+            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600" onclick="togglePasswordVisibility('register-password')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="form-error hidden" id="register-password-error"></div>
+        </div>
+        <div class="mb-4">
+          <label for="register-confirm-password" class="block mb-2">Confirm Password</label>
+          <div class="relative">
+            <input type="password" id="register-confirm-password" class="input-field" placeholder="Confirm your password">
+            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600" onclick="togglePasswordVisibility('register-confirm-password')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="form-error hidden" id="register-confirm-password-error"></div>
+        </div>
+        <div class="mb-6">
+          <label class="flex items-center text-sm">
+            <input type="checkbox" id="register-terms" class="mr-2 rounded focus:ring-primary">
+            I agree to the <a href="#" class="ml-1">Terms of Service</a>  and <a href="#" class="ml-1"> Privacy Policy</a>
+          </label>
+          <div class="form-error hidden" id="register-terms-error"></div>
+        </div>
+        <button type="submit" class="gradient-btn w-full">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+      <p class="text-center text-sm mt-4">
+        Already have an account? 
+        <a href="login.html" onclick="showSection('login')">Login here</a>
+      </p>
+    </section>
+
+    <!-- OTP Verification Section -->
+    <section id="otp-verification-section">
+      <h2 class="text-2xl font-bold text-center mb-6">OTP Verification</h2>
+      <p class="text-center mb-4 text-sm">Please enter the 6-digit OTP sent to your email</p>
+      <form id="otp-form" class="flex justify-center mb-4">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-1">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-2">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-3">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-4">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-5">
+        <input type="text" maxlength="1" class="otp-input input-field text-center" id="otp-6">
+      </form>
+      <div class="form-error text-center hidden" id="otp-error"></div>
+      <div class="text-center mt-4">
+        <button onclick="verifyOTP()" class="gradient-btn mx-auto">
+          <i class="fas fa-check-circle"></i> Verify OTP
+        </button>
+        <p class="text-sm mt-2">
+          Didn't receive OTP? <a href="#" onclick="resendOTP()">Resend</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard-section">
+      <h2 class="text-2xl font-bold text-center mb-6">Welcome to AgriTech</h2>
+      <div class="text-center">
+        <p id="user-welcome" class="mb-4"></p>
+        <button onclick="logout()" class="gradient-btn mx-auto">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
